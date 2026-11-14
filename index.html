@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Campus Peer Study Group and Exam Prep Circle Finder</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top"><i></i>StudyCircle</a>
+    <nav aria-label="Main">
+      <a href="#groups">Find a circle</a>
+      <a href="#how">How it works</a>
+      <a href="#create">Start a circle</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <h1>Find the people who will help you pass.</h1>
+      <p class="lead">Join a peer study group for your subject, or start one for your next exam. Every circle lists its time, place and open seats, so you can show up ready.</p>
+      <form class="finder" action="#groups" aria-label="Find a study circle">
+        <div><label for="q-sub">Subject or course code</label><input id="q-sub" type="text" placeholder="e.g. Data Structures"></div>
+        <div><label for="q-when">Preferred time</label>
+          <select id="q-when"><option>Any time</option><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Weekends</option></select></div>
+        <button class="btn" type="submit">Find circles</button>
+      </form>
+    </div>
+    <div class="rings" role="img" aria-label="Three overlapping circles representing students joining a study group">
+      <span class="a">Study</span><span class="b">Share</span><span class="c">Pass</span>
+    </div>
+  </div>
+
+  <section id="groups">
+    <div class="wrap groups">
+      <h2>Open study circles</h2>
+      <p class="sub">Pick a subject area to narrow the list. Join before the seats run out.</p>
+
+      <div class="chips" role="radiogroup" aria-label="Filter by subject area">
+        <input type="radio" name="f" id="f-all" checked><label for="f-all">All subjects</label>
+        <input type="radio" name="f" id="f-prog"><label for="f-prog">Programming</label>
+        <input type="radio" name="f" id="f-math"><label for="f-math">Maths</label>
+        <input type="radio" name="f" id="f-sci"><label for="f-sci">Science</label>
+        <input type="radio" name="f" id="f-core"><label for="f-core">Core CSE</label>
+      </div>
+
+      <div class="grid">
+        <article class="card" data-s="prog" data-n="6" data-t="8">
+          <span class="tag">Programming</span>
+          <h3>DSA Problem-Solving Circle</h3>
+          <ul class="meta">
+            <li><b>When:</b> Mon &amp; Thu, 5:00 PM</li>
+            <li><b>Where:</b> Library, Study Room 2</li>
+            <li><b>Exam:</b> Mid-term, next 3 weeks</li>
+            <li><b>Host:</b> Aarav, CSE Term 3</li>
+          </ul>
+          <div class="seats"><div class="bar-seat"><i></i></div><span class="count"></span></div>
+          <details class="joinbox"><summary class="btn">Join this circle</summary>
+            <form class="joinform"><label>Your registration no. (8 digits)<input type="text" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" required placeholder="e.g. 12627377"></label><button class="btn" type="submit">Confirm join</button></form></details>
+          <p class="joined" hidden><span></span> <button type="button" class="leave">Leave</button></p>
+          <p class="err" role="alert" hidden></p>
+          <details class="chatbox" hidden><summary class="btn ghost">Open circle chat</summary>
+            <div class="chatlog" role="log" aria-live="polite"><p class="empty">No messages yet. Ask a question or share a note.</p></div>
+            <form class="chatform"><input type="text" class="chat-text" placeholder="Type a message or note" aria-label="Message" maxlength="500"><label class="attach">Attach file<input type="file" hidden></label><button class="btn" type="submit">Send</button></form></details>
+        </article>
+
+        <article class="card" data-s="math" data-n="4" data-t="8">
+          <span class="tag">Maths</span>
+          <h3>Calculus Last-Mile Revision</h3>
+          <ul class="meta">
+            <li><b>When:</b> Saturday, 10:00 AM</li>
+            <li><b>Where:</b> Block 32, Room 104</li>
+            <li><b>Exam:</b> End-term, 10 days</li>
+            <li><b>Host:</b> Simran, CSE Term 2</li>
+          </ul>
+          <div class="seats"><div class="bar-seat"><i></i></div><span class="count"></span></div>
+          <details class="joinbox"><summary class="btn">Join this circle</summary>
+            <form class="joinform"><label>Your registration no. (8 digits)<input type="text" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" required placeholder="e.g. 12627377"></label><button class="btn" type="submit">Confirm join</button></form></details>
+          <p class="joined" hidden><span></span> <button type="button" class="leave">Leave</button></p>
+          <p class="err" role="alert" hidden></p>
+          <details class="chatbox" hidden><summary class="btn ghost">Open circle chat</summary>
+            <div class="chatlog" role="log" aria-live="polite"><p class="empty">No messages yet. Ask a question or share a note.</p></div>
+            <form class="chatform"><input type="text" class="chat-text" placeholder="Type a message or note" aria-label="Message" maxlength="500"><label class="attach">Attach file<input type="file" hidden></label><button class="btn" type="submit">Send</button></form></details>
+        </article>
+
+        <article class="card" data-s="sci" data-n="9" data-t="10">
+          <span class="tag">Science</span>
+          <h3>Physics Numericals Night</h3>
+          <ul class="meta">
+            <li><b>When:</b> Wed, 8:00 PM</li>
+            <li><b>Where:</b> Hostel common room</li>
+            <li><b>Exam:</b> Mid-term, 2 weeks</li>
+            <li><b>Host:</b> Rohan, ECE Term 1</li>
+          </ul>
+          <div class="seats"><div class="bar-seat"><i></i></div><span class="count"></span></div>
+          <details class="joinbox"><summary class="btn">Join this circle</summary>
+            <form class="joinform"><label>Your registration no. (8 digits)<input type="text" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" required placeholder="e.g. 12627377"></label><button class="btn" type="submit">Confirm join</button></form></details>
+          <p class="joined" hidden><span></span> <button type="button" class="leave">Leave</button></p>
+          <p class="err" role="alert" hidden></p>
+          <details class="chatbox" hidden><summary class="btn ghost">Open circle chat</summary>
+            <div class="chatlog" role="log" aria-live="polite"><p class="empty">No messages yet. Ask a question or share a note.</p></div>
+            <form class="chatform"><input type="text" class="chat-text" placeholder="Type a message or note" aria-label="Message" maxlength="500"><label class="attach">Attach file<input type="file" hidden></label><button class="btn" type="submit">Send</button></form></details>
+        </article>
+
+        <article class="card" data-s="core" data-n="3" data-t="8">
+          <span class="tag">Core CSE</span>
+          <h3>DBMS Query Practice</h3>
+          <ul class="meta">
+            <li><b>When:</b> Tue &amp; Fri, 2:30 PM</li>
+            <li><b>Where:</b> Computer Lab 5</li>
+            <li><b>Exam:</b> Practical viva, 1 week</li>
+            <li><b>Host:</b> Neha, CSE Term 4</li>
+          </ul>
+          <div class="seats"><div class="bar-seat"><i></i></div><span class="count"></span></div>
+          <details class="joinbox"><summary class="btn">Join this circle</summary>
+            <form class="joinform"><label>Your registration no. (8 digits)<input type="text" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" required placeholder="e.g. 12627377"></label><button class="btn" type="submit">Confirm join</button></form></details>
+          <p class="joined" hidden><span></span> <button type="button" class="leave">Leave</button></p>
+          <p class="err" role="alert" hidden></p>
+          <details class="chatbox" hidden><summary class="btn ghost">Open circle chat</summary>
+            <div class="chatlog" role="log" aria-live="polite"><p class="empty">No messages yet. Ask a question or share a note.</p></div>
+            <form class="chatform"><input type="text" class="chat-text" placeholder="Type a message or note" aria-label="Message" maxlength="500"><label class="attach">Attach file<input type="file" hidden></label><button class="btn" type="submit">Send</button></form></details>
+        </article>
+
+        <article class="card" data-s="prog" data-n="3" data-t="10">
+          <span class="tag">Programming</span>
+          <h3>Python Basics for Beginners</h3>
+          <ul class="meta">
+            <li><b>When:</b> Sun, 4:00 PM</li>
+            <li><b>Where:</b> Block 34, Room 210</li>
+            <li><b>Exam:</b> Lab test, 12 days</li>
+            <li><b>Host:</b> Kabir, CSE Term 3</li>
+          </ul>
+          <div class="seats"><div class="bar-seat"><i></i></div><span class="count"></span></div>
+          <details class="joinbox"><summary class="btn">Join this circle</summary>
+            <form class="joinform"><label>Your registration no. (8 digits)<input type="text" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" required placeholder="e.g. 12627377"></label><button class="btn" type="submit">Confirm join</button></form></details>
+          <p class="joined" hidden><span></span> <button type="button" class="leave">Leave</button></p>
+          <p class="err" role="alert" hidden></p>
+          <details class="chatbox" hidden><summary class="btn ghost">Open circle chat</summary>
+            <div class="chatlog" role="log" aria-live="polite"><p class="empty">No messages yet. Ask a question or share a note.</p></div>
+            <form class="chatform"><input type="text" class="chat-text" placeholder="Type a message or note" aria-label="Message" maxlength="500"><label class="attach">Attach file<input type="file" hidden></label><button class="btn" type="submit">Send</button></form></details>
+        </article>
+
+        <article class="card" data-s="core" data-n="5" data-t="8">
+          <span class="tag">Core CSE</span>
+          <h3>Operating Systems Theory Group</h3>
+          <ul class="meta">
+            <li><b>When:</b> Thu, 6:30 PM</li>
+            <li><b>Where:</b> Library, Study Room 4</li>
+            <li><b>Exam:</b> End-term, 3 weeks</li>
+            <li><b>Host:</b> Meera, CSE Term 5</li>
+          </ul>
+          <div class="seats"><div class="bar-seat"><i></i></div><span class="count"></span></div>
+          <details class="joinbox"><summary class="btn">Join this circle</summary>
+            <form class="joinform"><label>Your registration no. (8 digits)<input type="text" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" required placeholder="e.g. 12627377"></label><button class="btn" type="submit">Confirm join</button></form></details>
+          <p class="joined" hidden><span></span> <button type="button" class="leave">Leave</button></p>
+          <p class="err" role="alert" hidden></p>
+          <details class="chatbox" hidden><summary class="btn ghost">Open circle chat</summary>
+            <div class="chatlog" role="log" aria-live="polite"><p class="empty">No messages yet. Ask a question or share a note.</p></div>
+            <form class="chatform"><input type="text" class="chat-text" placeholder="Type a message or note" aria-label="Message" maxlength="500"><label class="attach">Attach file<input type="file" hidden></label><button class="btn" type="submit">Send</button></form></details>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="sub">From searching to your first session takes a few minutes.</p>
+      <ol class="steps">
+        <li><h3>Search your subject</h3><p>Enter a course or pick a subject area to see circles with open seats.</p></li>
+        <li><h3>Join a circle</h3><p>Check the time and place, then request a seat. The host confirms it.</p></li>
+        <li><h3>Study and swap notes</h3><p>Meet, solve past papers together and explain topics to each other.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="create">
+    <div class="wrap">
+      <div class="create">
+        <div>
+          <h2>Can't find your subject? Start a circle.</h2>
+          <p>Tell us what you are studying and when. Other students can join once you post it.</p>
+        </div>
+        <form id="create-form" action="#top" aria-label="Start a study circle">
+          <div class="full"><label for="c-name">Circle name</label><input id="c-name" type="text" placeholder="e.g. Networks Revision Squad" required></div>
+          <div><label for="h-name">Your name</label><input id="h-name" type="text" placeholder="Full name" required></div>
+          <div><label for="h-reg">Your registration no.</label><input id="h-reg" type="text" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" placeholder="8 digits" required></div>
+          <div><label for="h-year">Your B.Tech year</label>
+            <select id="h-year" required><option value="">Select year</option><option>1st year</option><option>2nd year</option><option>3rd year</option><option>4th year</option></select></div>
+          <div><label for="c-sub">Subject</label><input id="c-sub" type="text" placeholder="e.g. Computer Networks" required></div>
+          <div><label for="c-area">Subject area</label>
+            <select id="c-area"><option value="prog">Programming</option><option value="math">Maths</option><option value="sci">Science</option><option value="core">Core CSE</option></select></div>
+          <div><label for="c-size">Seats</label>
+            <select id="c-size"><option>4</option><option>6</option><option selected>8</option><option>10</option></select></div>
+          <div><label for="c-date">Date</label><input id="c-date" type="date"></div>
+          <div><label for="c-time">Time</label><input id="c-time" type="time"></div>
+          <div class="full"><label for="c-place">Meeting place</label><input id="c-place" type="text" placeholder="e.g. Library, Study Room 3"></div>
+          <div class="full"><label for="c-note">What will you cover?</label><textarea id="c-note" placeholder="Topics, past papers, or exam date"></textarea></div>
+          <p class="full posted" id="posted" role="status" hidden></p>
+          <div class="full"><button class="btn" type="submit">Post my circle</button></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">StudyCircle: a campus peer study group and exam prep finder. Built with HTML, CSS and a little JavaScript.</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
